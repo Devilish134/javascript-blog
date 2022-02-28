@@ -62,7 +62,7 @@ function generateTitleLinks(customSelector = ''){
     console.log(links);
     for(let link of links){
         link.addEventListener('click', titleClickHandler);
-        }
+    }
 }
 
 generateTitleLinks();
