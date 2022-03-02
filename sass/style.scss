@@ -91,7 +91,7 @@ body {
 
 li a {
   text-decoration: none;
-  color: rgb(95, 114, 233);;
+  color: rgb(95, 114, 233);
 }
 
 .list-horizontal {
@@ -129,5 +129,10 @@ li a {
   display: flex;
   p {
     margin: 0 10px 0 0;
+  }
+  a {
+    margin: 0 10px 0 0;
+    text-decoration: none;
+    color: rgb(95, 114, 233);
   }
 }
