@@ -3,7 +3,6 @@
 function titleClickHandler(event){
   event.preventDefault();
   const clickedElement = this;
-  console.log('Link was clicked!');
 
   /* remove class 'active' from all article links  */
   const activeLinks = document.querySelectorAll('.titles a.active');
@@ -87,11 +86,9 @@ function generateTags(){
       /* add generated code to html variable */
       html = html + linkHTML;
     }
-    /* END LOOP: for each tag */
     /* insert HTML of all the links into the tags wrapper */
     tagWrapper.innerHTML = html;
   }
-/* END LOOP: for every article: */
 }
 
 generateTags();
@@ -99,10 +96,11 @@ generateTags();
 function tagClickHandler(event){
   event.preventDefault();
   const clickedElement = this;
+  console.log('Link was clicked!');
   
   const href = clickedElement.getAttribute('href');
   /* make a new constant "tag" and extract tag from the "href" constant */
-  const tag = href.replace('#tag-', ''); 
+  const tag = href.replace('#tag-', '');
   /* find all tag links with class active */
   const TagActiveLinks = document.querySelectorAll('a.active[href^="#tag-"]');
 
@@ -111,24 +109,22 @@ function tagClickHandler(event){
   }
   
   /* find all tag links with "href" attribute equal to the "href" constant */
+  const tagsEqualToClicked = document.querySelectorAll('a.[href^="'+ href + '"]');
   
-  /* START LOOP: for each found tag link */
-  
-    /* add class active */
-  
-  /* END LOOP: for each found tag link */
-  
+  for(let tagEqualTo of tagsEqualToClicked){ 
+    tagEqualTo.classList.add('active ');
+  }
   /* execute function "generateTitleLinks" with article selector as argument */
+  generateTitleLinks('[data-tags~="' + tag + '"]');
 }
   
 function addClickListenersToTags(){
-  /* find all links to tags */
-  
-  /* START LOOP: for each link */
-  
-    /* add tagClickHandler as event listener for that link */
-  
-  /* END LOOP: for each link */
+  const tagActiveLinks = document.querySelectorAll('a[href^="#tag-"]'); 
+
+  for(let tagActiveLink of tagActiveLinks){
+    tagActiveLink.addEventListener('click', tagClickHandler);
+
+  }
 }
-  
+
 addClickListenersToTags();
