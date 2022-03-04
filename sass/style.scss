@@ -121,8 +121,10 @@ li a {
   }
 }
 
-.post-author {
+.post-author a {
   font-style: italic;
+  text-decoration: none;
+  color: $color-dark;
 }
 
 .post-tags {
