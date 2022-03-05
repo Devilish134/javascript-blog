@@ -36,8 +36,8 @@ const optArticleSelector = '.post',
   optTitleListSelector = '.titles',
   optArticleTagSelector = '.post-tags .list',
   optArticleAuthorSelector = '.post-author',
-  optTagsListSelector = '.tags.list';
-
+  optTagsListSelector = '.tags.list',
+  optCloudClassCount = '5';
 
 function generateTitleLinks(customSelector = ''){
 
@@ -84,7 +84,7 @@ function generateTags(){
     /* START LOOP: for each tag */
     for(let tag of articleTagsArray){
       /* generate HTML of the link */
-      const linkHTML = '<a href="#tag-' + tag + '"><span></span>' + tag + '</a>';
+      const linkHTML = '<a href="#tag-' + tag + '" ><span>' + tag + '</span></a>';
       /* add generated code to html variable */
       html = html + linkHTML;
       /* [NEW] check if this link is NOT already in allTags */
@@ -104,10 +104,11 @@ function generateTags(){
 
   for(let tag in allTags){
     /*[NEW] generate code of a link and add allTagsHTML*/
-    const linkHTML = '<a href="#tag-' + tag + '">' + tag + '</a><span>' + allTagsHTML + '</span>';
+    allTagsHTML += tag + ' (' + allTags[tag] + ') ';
+    const linkHTML = '<a href="#' + tag + '" ><span>' + allTagsHTML + '</span></a>';
     allTagsHTML = linkHTML;
   }
-tagList.innerHTML = allTagsHTML;
+  tagList.innerHTML = allTagsHTML;
 }
 
 generateTags();
