@@ -65,7 +65,7 @@ body {
   padding: 40px;
   border: 1px solid $color-dark;
   border-radius: 5px;
-  height: 800px;
+  height: 850px;
 }
 
 /* Logo */
@@ -92,12 +92,6 @@ body {
 li a {
   text-decoration: none;
   color: rgb(95, 114, 233);
-}
-
-.list-horizontal {
-  li {
-    display: inline-block;
-  }
 }
 
 /* Authors */
@@ -141,6 +135,26 @@ li a {
 
 .tags a {
   text-decoration: none;
-  display: block;
+  display: inline;
   color: rgb(95, 114, 233);
+}
+
+.tag-size-1 {
+  font-size: 16px;
+}
+
+.tag-size-2 {
+  font-size: 20px;
+}
+
+.tag-size-3 {
+  font-size: 24px;
+}
+
+.tag-size-4 {
+  font-size: 28px;
+}
+
+.tag-size-5 {
+  font-size: 32px;
 }
