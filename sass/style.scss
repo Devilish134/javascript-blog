@@ -133,28 +133,34 @@ li a {
   }
 }
 
-.tags a {
+.tags li {
   text-decoration: none;
-  display: inline;
+  display: inline-block;
   color: rgb(95, 114, 233);
+  margin: 5px;
 }
 
 .tag-size-1 {
   font-size: 16px;
+  color: rgb(255, 86, 86);
 }
 
 .tag-size-2 {
   font-size: 20px;
+  color: rgb(255, 139, 86);
 }
 
 .tag-size-3 {
   font-size: 24px;
+  color: rgb(255, 244, 86);
 }
 
 .tag-size-4 {
   font-size: 28px;
+  color: rgb(86, 255, 218);
 }
 
 .tag-size-5 {
   font-size: 32px;
+  color: rgb(0, 163, 238);
 }
